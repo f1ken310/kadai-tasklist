@@ -1,4 +1,4 @@
-<h1>id:<%= @task.id %>のタスク編集ページ</h1>
+<h1>id:<%= @task.id %>のタスクページ</h1>
 
 <%= form_with(model: @task, local: true) do |f| %>
   <%= f.label :content, 'タスク' %>
@@ -8,3 +8,4 @@
 <% end %>
 
 <%= link_to '一覧に戻る', tasks_path %>
+<%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
