@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'users/show'
   get 'users/new'
   get 'users/create'
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
     get 'signup', to: 'users#new'
     
     resources :tasks
+    resources :users, only:[:create, :new]
     
 end
