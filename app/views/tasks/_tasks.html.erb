@@ -1,9 +1,6 @@
 <% tasks.each do |tsk| %>
     
-    
     <p><%= link_to tsk.id, tsk %> <%= tsk.status %></p>
     <p>タスク内容：<%= tsk.content %></p>
-    
-  
     
 <% end %>
