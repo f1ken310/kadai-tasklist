@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-    before_action :require_user_logged_in 
-    before_action :correct_user, only: [:destroy]
+    before_action :require_user_logged_in
+    before_action :correct_user, only:  [:crate, :update, :destroy]
  
     def index
       if logged_in?
@@ -25,9 +25,8 @@ class TasksController < ApplicationController
             flash[:success] = 'Task が正常に投稿されました'
             redirect_to root_url
         else
-            @task =current_user.tasks.order(id: :desc).page(params[:page])
             flash.now[:danger] = 'Task が投稿されませんでした'
-            render 'tasks/index'
+            render :new
         end
     end
     
