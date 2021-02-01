@@ -7,12 +7,10 @@
       
     
     <div>
-    <%= render 'tasks' %>
+    <%= render 'tasks', tasks:  @tasks %>
     </div>
 
     <%= link_to 'Logout', logout_path, method: :delete %></li>
     
  
 
-    <%= link_to '新規登録', signup_path %>
-    <%= link_to 'ログイン', login_path %>
